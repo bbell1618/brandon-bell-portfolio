@@ -3,25 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #FFFFFF;
+  --bg-section: #F5F7FA;
+  --bg-card: #EEF1F6;
+  --navy: #0D2466;
+  --navy-hover: #162E8A;
+  --text-primary: #1A1A2E;
+  --text-secondary: #4A5568;
+  --border: #DDE3ED;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .card-hover {
+    transition: box-shadow 200ms ease;
+  }
+  .card-hover:hover {
+    box-shadow: 0 6px 24px rgba(13, 36, 102, 0.12) !important;
+  }
+  .contact-card {
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .contact-card:hover {
+    border-color: #0D2466 !important;
+    box-shadow: 0 4px 16px rgba(13, 36, 102, 0.10) !important;
   }
 }
